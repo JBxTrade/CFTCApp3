@@ -7,6 +7,12 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "main": "Main",
+        "sub": "Sub",
+        "unSub": "Un Sub",
+        "link": "Link",
+        "linkData": "Link Data",
+        "i18N": "I 18 N",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

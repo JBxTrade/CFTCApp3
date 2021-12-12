@@ -1,0 +1,32 @@
+{
+  "cftcApp3App": {
+    "main": {
+      "home": {
+        "title": "Mains",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Main",
+        "createOrEditLabel": "Create or edit a Main",
+        "notFound": "No Mains found"
+      },
+      "created": "A new Main is created with identifier {{ param }}",
+      "updated": "A Main is updated with identifier {{ param }}",
+      "deleted": "A Main is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Main {{ id }}?"
+      },
+      "detail": {
+        "title": "Main"
+      },
+      "id": "ID",
+      "theRole": "The Role",
+      "image": "Image",
+      "subLink": "Sub Link",
+      "link": "Link",
+      "linkData": "Link Data",
+      "titleFr": "Title Fr",
+      "titleEn": "Title En",
+      "descriptionFr": "Description Fr",
+      "descriptionEn": "Description En"
+    }
+  }
+}

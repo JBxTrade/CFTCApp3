@@ -48,6 +48,17 @@ public class CacheConfiguration {
             createCache(cm, com.cftc.app.domain.User.class.getName());
             createCache(cm, com.cftc.app.domain.Authority.class.getName());
             createCache(cm, com.cftc.app.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.cftc.app.domain.Main.class.getName());
+            createCache(cm, com.cftc.app.domain.Sub.class.getName());
+            createCache(cm, com.cftc.app.domain.Sub.class.getName() + ".links");
+            createCache(cm, com.cftc.app.domain.Sub.class.getName() + ".linkData");
+            createCache(cm, com.cftc.app.domain.UnSub.class.getName());
+            createCache(cm, com.cftc.app.domain.UnSub.class.getName() + ".subs");
+            createCache(cm, com.cftc.app.domain.UnSub.class.getName() + ".links");
+            createCache(cm, com.cftc.app.domain.UnSub.class.getName() + ".linkData");
+            createCache(cm, com.cftc.app.domain.Link.class.getName());
+            createCache(cm, com.cftc.app.domain.LinkData.class.getName());
+            createCache(cm, com.cftc.app.domain.I18n.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="main">
+      <h2 data-cy="mainDetailsHeading"><span jhiTranslate="cftcApp3App.main.detail.title">Main</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ main.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.theRole">The Role</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cftcApp3App.TheRole.' + main.theRole }}">{{ main.theRole }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.image">Image</span></dt>
+        <dd>
+          <div *ngIf="main.image">
+            <a (click)="openFile(main.image, main.imageContentType)">
+              <img [src]="'data:' + main.imageContentType + ';base64,' + main.image" style="max-width: 100%" alt="main image" />
+            </a>
+            {{ main.imageContentType }}, {{ byteSize(main.image) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.subLink">Sub Link</span></dt>
+        <dd>
+          <div *ngIf="main.subLink">
+            <a [routerLink]="['/sub', main.subLink?.id, 'view']">{{ main.subLink?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.link">Link</span></dt>
+        <dd>
+          <div *ngIf="main.link">
+            <a [routerLink]="['/link', main.link?.id, 'view']">{{ main.link?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.linkData">Link Data</span></dt>
+        <dd>
+          <div *ngIf="main.linkData">
+            <a [routerLink]="['/link-data', main.linkData?.id, 'view']">{{ main.linkData?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.titleFr">Title Fr</span></dt>
+        <dd>
+          <div *ngIf="main.titleFr">
+            <a [routerLink]="['/i-18-n', main.titleFr?.id, 'view']">{{ main.titleFr?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.titleEn">Title En</span></dt>
+        <dd>
+          <div *ngIf="main.titleEn">
+            <a [routerLink]="['/i-18-n', main.titleEn?.id, 'view']">{{ main.titleEn?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.descriptionFr">Description Fr</span></dt>
+        <dd>
+          <div *ngIf="main.descriptionFr">
+            <a [routerLink]="['/i-18-n', main.descriptionFr?.id, 'view']">{{ main.descriptionFr?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.main.descriptionEn">Description En</span></dt>
+        <dd>
+          <div *ngIf="main.descriptionEn">
+            <a [routerLink]="['/i-18-n', main.descriptionEn?.id, 'view']">{{ main.descriptionEn?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/main', main.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

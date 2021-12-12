@@ -1,0 +1,78 @@
+{
+  "name": "Main",
+  "fields": [
+    {
+      "fieldName": "theRole",
+      "fieldType": "TheRole",
+      "fieldValues": "ADMIN,ANONYMOUS,STUDENT,TEACHER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sub",
+      "otherEntityRelationshipName": "main",
+      "relationshipName": "subLink",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "link",
+      "otherEntityRelationshipName": "main",
+      "relationshipName": "link",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "main",
+      "relationshipName": "linkData",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "mainTitleFr",
+      "relationshipName": "titleFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "mainTitleEn",
+      "relationshipName": "titleEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "mainDescriptionFr",
+      "relationshipName": "descriptionFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "mainDescriptionEn",
+      "relationshipName": "descriptionEn",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "main",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210522020737"
+}

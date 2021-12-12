@@ -1,0 +1,98 @@
+{
+  "name": "LinkData",
+  "fields": [
+    {
+      "fieldName": "theRole",
+      "fieldType": "TheRole",
+      "fieldValues": "ADMIN,ANONYMOUS,STUDENT,TEACHER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "imageCard",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "image2",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "image3",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "linkdataTitleFr",
+      "relationshipName": "titleFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "linkdataTitleEn",
+      "relationshipName": "titleEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "linkdataDescriptionFr",
+      "relationshipName": "descriptionFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "linkdataDescriptionEn",
+      "relationshipName": "descriptionEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "codeFr",
+      "relationshipName": "codeFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "codeEn",
+      "relationshipName": "codeEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sub",
+      "otherEntityRelationshipName": "linkData",
+      "relationshipName": "sub"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "unSub",
+      "otherEntityRelationshipName": "linkData",
+      "relationshipName": "unSub"
+    }
+  ],
+  "entityTableName": "link_data",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210522020741"
+}

@@ -1,0 +1,36 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="i18n">
+      <h2 data-cy="i18nDetailsHeading"><span jhiTranslate="cftcApp3App.i18n.detail.title">I 18 N</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ i18n.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.i18n.fr">Fr</span></dt>
+        <dd>
+          <span>{{ i18n.fr }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.i18n.en">En</span></dt>
+        <dd>
+          <span>{{ i18n.en }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/i-18-n', i18n.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

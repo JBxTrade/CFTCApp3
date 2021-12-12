@@ -1,0 +1,11 @@
+{
+  "cftcApp3App": {
+    "TheRole": {
+      "null": "",
+      "ADMIN": "ADMIN",
+      "ANONYMOUS": "ANONYMOUS",
+      "STUDENT": "STUDENT",
+      "TEACHER": "TEACHER"
+    }
+  }
+}

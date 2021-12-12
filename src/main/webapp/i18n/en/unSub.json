@@ -1,0 +1,32 @@
+{
+  "cftcApp3App": {
+    "unSub": {
+      "home": {
+        "title": "Un Subs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Un Sub",
+        "createOrEditLabel": "Create or edit a Un Sub",
+        "notFound": "No Un Subs found"
+      },
+      "created": "A new Un Sub is created with identifier {{ param }}",
+      "updated": "A Un Sub is updated with identifier {{ param }}",
+      "deleted": "A Un Sub is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Un Sub {{ id }}?"
+      },
+      "detail": {
+        "title": "Un Sub"
+      },
+      "id": "ID",
+      "theRole": "The Role",
+      "image": "Image",
+      "titleFr": "Title Fr",
+      "titleEn": "Title En",
+      "descriptionFr": "Description Fr",
+      "descriptionEn": "Description En",
+      "sub": "Sub",
+      "link": "Link",
+      "linkData": "Link Data"
+    }
+  }
+}

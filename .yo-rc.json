@@ -42,7 +42,9 @@
     "jwtSecretKey": "MTFlMTZiYmU5ODJhNzhhNTZmOTIxOGU2NGMzMGUzMzI0MmZmMjE1MTlmYTM4MjNiMGM3MGUzZDczNWE1Y2QxOTg4MWViNDU2NTc2NWM1OTYwMTRlMjVkZWFhYjM1N2EzZDcyNTQxMjliMTU3NDJmNzc2MTk3YjBjNzE4ZDE0ZGI=",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Main", "Sub", "UnSub", "Link", "LinkData", "I18n"],
+    "lastLiquibaseTimestamp": 1621649262000
   },
   "git-provider": "GitHub",
   "git-company": "JBxTrade",

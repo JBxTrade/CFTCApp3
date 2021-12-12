@@ -1,0 +1,65 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="unSub">
+      <h2 data-cy="unSubDetailsHeading"><span jhiTranslate="cftcApp3App.unSub.detail.title">Un Sub</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ unSub.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.unSub.theRole">The Role</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cftcApp3App.TheRole.' + unSub.theRole }}">{{ unSub.theRole }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.unSub.image">Image</span></dt>
+        <dd>
+          <div *ngIf="unSub.image">
+            <a (click)="openFile(unSub.image, unSub.imageContentType)">
+              <img [src]="'data:' + unSub.imageContentType + ';base64,' + unSub.image" style="max-width: 100%" alt="unSub image" />
+            </a>
+            {{ unSub.imageContentType }}, {{ byteSize(unSub.image) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.unSub.titleFr">Title Fr</span></dt>
+        <dd>
+          <div *ngIf="unSub.titleFr">
+            <a [routerLink]="['/i-18-n', unSub.titleFr?.id, 'view']">{{ unSub.titleFr?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.unSub.titleEn">Title En</span></dt>
+        <dd>
+          <div *ngIf="unSub.titleEn">
+            <a [routerLink]="['/i-18-n', unSub.titleEn?.id, 'view']">{{ unSub.titleEn?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.unSub.descriptionFr">Description Fr</span></dt>
+        <dd>
+          <div *ngIf="unSub.descriptionFr">
+            <a [routerLink]="['/i-18-n', unSub.descriptionFr?.id, 'view']">{{ unSub.descriptionFr?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.unSub.descriptionEn">Description En</span></dt>
+        <dd>
+          <div *ngIf="unSub.descriptionEn">
+            <a [routerLink]="['/i-18-n', unSub.descriptionEn?.id, 'view']">{{ unSub.descriptionEn?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/un-sub', unSub.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Main.
+    -->
+    <changeSet id="20210522020737-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="sub_link_id"
+                                 baseTableName="main"
+                                 constraintName="fk_main__sub_link_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sub"/>
+
+        <addForeignKeyConstraint baseColumnNames="link_id"
+                                 baseTableName="main"
+                                 constraintName="fk_main__link_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="link"/>
+
+        <addForeignKeyConstraint baseColumnNames="link_data_id"
+                                 baseTableName="main"
+                                 constraintName="fk_main__link_data_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="link_data"/>
+
+        <addForeignKeyConstraint baseColumnNames="title_fr_id"
+                                 baseTableName="main"
+                                 constraintName="fk_main__title_fr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+
+        <addForeignKeyConstraint baseColumnNames="title_en_id"
+                                 baseTableName="main"
+                                 constraintName="fk_main__title_en_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+
+        <addForeignKeyConstraint baseColumnNames="description_fr_id"
+                                 baseTableName="main"
+                                 constraintName="fk_main__description_fr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+
+        <addForeignKeyConstraint baseColumnNames="description_en_id"
+                                 baseTableName="main"
+                                 constraintName="fk_main__description_en_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,140 @@
+<div class="container" [ngSwitch]="isAuthenticated()" xmlns="http://www.w3.org/1999/html">
+  <br />
+  <br />
+  <div *ngSwitchCase="true">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let link of links">
+        <div *ngIf="link">
+          <a [routerLink]="['/link', link?.id, 'view']">
+            <div class="card shadow" style="max-width: 300px; max-height: 400px">
+              <div class="card-img">
+                <img
+                  class="rounded mx-auto d-block"
+                  [src]="'data:' + link.imageContentType + ';base64,' + link.image"
+                  style="max-height: 300px; max-width: 300px"
+                  alt="maina image"
+                />
+              </div>
+              <div class="card-body">
+                <span *ngIf="getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ link.titleFr?.fr }}</h4>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ link.titleEn?.en }}</h4>
+                </span>
+                <span *ngIf="getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ link.descriptionFr?.fr }}</h6>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ link.descriptionEn?.en }}</h6>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <br />
+        <br />
+      </div>
+      <div class="col" *ngFor="let linksData of linkData">
+        <div *ngIf="linksData">
+          <a [routerLink]="['/link-data', linksData?.id, 'view']">
+            <div class="card shadow" style="max-width: 300px; max-height: 400px">
+              <div class="card-img">
+                <img
+                  class="rounded mx-auto d-block"
+                  [src]="'data:' + linksData.imageContentType + ';base64,' + linksData.image"
+                  style="max-height: 300px; max-width: 300px"
+                  alt="maina image"
+                />
+              </div>
+              <div class="card-body">
+                <span *ngIf="getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ linksData.titleFr?.fr }}</h4>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ linksData.titleEn?.en }}</h4>
+                </span>
+                <span *ngIf="getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ linksData.descriptionFr?.fr }}</h6>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ linksData.descriptionEn?.en }}</h6>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+  <div *ngSwitchCase="false">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let link of links">
+        <div *ngIf="link">
+          <a [routerLink]="['/link', link?.id, 'view']">
+            <div class="card shadow" style="max-width: 300px; max-height: 400px">
+              <div class="card-img">
+                <img
+                  class="rounded mx-auto d-block"
+                  [src]="'data:' + link.imageContentType + ';base64,' + link.image"
+                  style="max-height: 300px; max-width: 300px"
+                  alt="maina image"
+                />
+              </div>
+              <div class="card-body">
+                <span *ngIf="getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ link.titleFr?.fr }}</h4>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ link.titleEn?.en }}</h4>
+                </span>
+                <span *ngIf="getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ link.descriptionFr?.fr }}</h6>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ link.descriptionEn?.en }}</h6>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <br />
+        <br />
+      </div>
+      <div class="col" *ngFor="let linksData of linkData">
+        <div *ngIf="linksData">
+          <a [routerLink]="['/link-data', linksData?.id, 'view']">
+            <div class="card shadow" style="max-width: 300px; max-height: 400px">
+              <div class="card-img">
+                <img
+                  class="rounded mx-auto d-block"
+                  [src]="'data:' + linksData.imageContentType + ';base64,' + linksData.image"
+                  style="max-height: 300px; max-width: 300px"
+                  alt="maina image"
+                />
+              </div>
+              <div class="card-body">
+                <span *ngIf="getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ linksData.titleFr?.fr }}</h4>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h4 class="card-title font-weight-bold">{{ linksData.titleEn?.en }}</h4>
+                </span>
+                <span *ngIf="getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ linksData.descriptionFr?.fr }}</h6>
+                </span>
+                <span *ngIf="!getlanguage()">
+                  <h6 class="card-text font-italic font-weight-light">{{ linksData.descriptionEn?.en }}</h6>
+                </span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <br />
+        <br />
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,337 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-link-data-heading" data-cy="LinkDataCreateUpdateHeading" jhiTranslate="cftcApp3App.linkData.home.createOrEditLabel">
+        Create or edit a Link Data
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.theRole" for="field_theRole">The Role</label>
+          <select class="form-control" name="theRole" formControlName="theRole" id="field_theRole" data-cy="theRole">
+            <option [ngValue]="null">{{ 'cftcApp3App.TheRole.null' | translate }}</option>
+            <option value="ADMIN">{{ 'cftcApp3App.TheRole.ADMIN' | translate }}</option>
+            <option value="ANONYMOUS">{{ 'cftcApp3App.TheRole.ANONYMOUS' | translate }}</option>
+            <option value="STUDENT">{{ 'cftcApp3App.TheRole.STUDENT' | translate }}</option>
+            <option value="TEACHER">{{ 'cftcApp3App.TheRole.TEACHER' | translate }}</option>
+          </select>
+          <div *ngIf="editForm.get('theRole')!.invalid && (editForm.get('theRole')!.dirty || editForm.get('theRole')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('theRole')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.imageCard" for="field_imageCard">Image Card</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('imageCardContentType')!.value + ';base64,' + editForm.get('imageCard')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('imageCard')!.value"
+              alt="linkData image"
+            />
+            <div *ngIf="editForm.get('imageCard')!.value" class="form-text text-danger clearfix">
+              <span class="pull-left"
+                >{{ editForm.get('imageCardContentType')!.value }}, {{ byteSize(editForm.get('imageCard')!.value) }}</span
+              >
+              <button
+                type="button"
+                (click)="clearInputImage('imageCard', 'imageCardContentType', 'file_imageCard')"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_imageCard"
+              data-cy="imageCard"
+              (change)="setFileData($event, 'imageCard', true)"
+              accept="image/*"
+              jhiTranslate="entity.action.addimage"
+            />
+          </div>
+          <input type="hidden" class="form-control" name="imageCard" id="field_imageCard" data-cy="imageCard" formControlName="imageCard" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="imageCardContentType"
+            id="field_imageCardContentType"
+            formControlName="imageCardContentType"
+          />
+          <div *ngIf="editForm.get('imageCard')!.invalid && (editForm.get('imageCard')!.dirty || editForm.get('imageCard')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('imageCard')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.image" for="field_image">Image</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('image')!.value"
+              alt="linkData image"
+            />
+            <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
+              <span class="pull-left">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value) }}</span>
+              <button
+                type="button"
+                (click)="clearInputImage('image', 'imageContentType', 'file_image')"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_image"
+              data-cy="image"
+              (change)="setFileData($event, 'image', true)"
+              accept="image/*"
+              jhiTranslate="entity.action.addimage"
+            />
+          </div>
+          <input type="hidden" class="form-control" name="image" id="field_image" data-cy="image" formControlName="image" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="imageContentType"
+            id="field_imageContentType"
+            formControlName="imageContentType"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.image2" for="field_image2">Image 2</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('image2ContentType')!.value + ';base64,' + editForm.get('image2')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('image2')!.value"
+              alt="linkData image"
+            />
+            <div *ngIf="editForm.get('image2')!.value" class="form-text text-danger clearfix">
+              <span class="pull-left">{{ editForm.get('image2ContentType')!.value }}, {{ byteSize(editForm.get('image2')!.value) }}</span>
+              <button
+                type="button"
+                (click)="clearInputImage('image2', 'image2ContentType', 'file_image2')"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_image2"
+              data-cy="image2"
+              (change)="setFileData($event, 'image2', true)"
+              accept="image/*"
+              jhiTranslate="entity.action.addimage"
+            />
+          </div>
+          <input type="hidden" class="form-control" name="image2" id="field_image2" data-cy="image2" formControlName="image2" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="image2ContentType"
+            id="field_image2ContentType"
+            formControlName="image2ContentType"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.image3" for="field_image3">Image 3</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('image3ContentType')!.value + ';base64,' + editForm.get('image3')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('image3')!.value"
+              alt="linkData image"
+            />
+            <div *ngIf="editForm.get('image3')!.value" class="form-text text-danger clearfix">
+              <span class="pull-left">{{ editForm.get('image3ContentType')!.value }}, {{ byteSize(editForm.get('image3')!.value) }}</span>
+              <button
+                type="button"
+                (click)="clearInputImage('image3', 'image3ContentType', 'file_image3')"
+                class="btn btn-secondary btn-xs pull-right"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input
+              type="file"
+              id="file_image3"
+              data-cy="image3"
+              (change)="setFileData($event, 'image3', true)"
+              accept="image/*"
+              jhiTranslate="entity.action.addimage"
+            />
+          </div>
+          <input type="hidden" class="form-control" name="image3" id="field_image3" data-cy="image3" formControlName="image3" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="image3ContentType"
+            id="field_image3ContentType"
+            formControlName="image3ContentType"
+          />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.titleFr" for="field_titleFr">Title Fr</label>
+          <select class="form-control" id="field_titleFr" data-cy="titleFr" name="titleFr" formControlName="titleFr">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="i18nOption.id === editForm.get('titleFr')!.value?.id ? editForm.get('titleFr')!.value : i18nOption"
+              *ngFor="let i18nOption of titleFrsCollection; trackBy: trackI18nById"
+            >
+              {{ i18nOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.titleEn" for="field_titleEn">Title En</label>
+          <select class="form-control" id="field_titleEn" data-cy="titleEn" name="titleEn" formControlName="titleEn">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="i18nOption.id === editForm.get('titleEn')!.value?.id ? editForm.get('titleEn')!.value : i18nOption"
+              *ngFor="let i18nOption of titleEnsCollection; trackBy: trackI18nById"
+            >
+              {{ i18nOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.descriptionFr" for="field_descriptionFr"
+            >Description Fr</label
+          >
+          <select
+            class="form-control"
+            id="field_descriptionFr"
+            data-cy="descriptionFr"
+            name="descriptionFr"
+            formControlName="descriptionFr"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="i18nOption.id === editForm.get('descriptionFr')!.value?.id ? editForm.get('descriptionFr')!.value : i18nOption"
+              *ngFor="let i18nOption of descriptionFrsCollection; trackBy: trackI18nById"
+            >
+              {{ i18nOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.descriptionEn" for="field_descriptionEn"
+            >Description En</label
+          >
+          <select
+            class="form-control"
+            id="field_descriptionEn"
+            data-cy="descriptionEn"
+            name="descriptionEn"
+            formControlName="descriptionEn"
+          >
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="i18nOption.id === editForm.get('descriptionEn')!.value?.id ? editForm.get('descriptionEn')!.value : i18nOption"
+              *ngFor="let i18nOption of descriptionEnsCollection; trackBy: trackI18nById"
+            >
+              {{ i18nOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.codeFr" for="field_codeFr">Code Fr</label>
+          <select class="form-control" id="field_codeFr" data-cy="codeFr" name="codeFr" formControlName="codeFr">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="i18nOption.id === editForm.get('codeFr')!.value?.id ? editForm.get('codeFr')!.value : i18nOption"
+              *ngFor="let i18nOption of codeFrsCollection; trackBy: trackI18nById"
+            >
+              {{ i18nOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.codeEn" for="field_codeEn">Code En</label>
+          <select class="form-control" id="field_codeEn" data-cy="codeEn" name="codeEn" formControlName="codeEn">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="i18nOption.id === editForm.get('codeEn')!.value?.id ? editForm.get('codeEn')!.value : i18nOption"
+              *ngFor="let i18nOption of codeEnsCollection; trackBy: trackI18nById"
+            >
+              {{ i18nOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.sub" for="field_sub">Sub</label>
+          <select class="form-control" id="field_sub" data-cy="sub" name="sub" formControlName="sub">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="subOption.id === editForm.get('sub')!.value?.id ? editForm.get('sub')!.value : subOption"
+              *ngFor="let subOption of subsSharedCollection; trackBy: trackSubById"
+            >
+              {{ subOption.id }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="cftcApp3App.linkData.unSub" for="field_unSub">Un Sub</label>
+          <select class="form-control" id="field_unSub" data-cy="unSub" name="unSub" formControlName="unSub">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="unSubOption.id === editForm.get('unSub')!.value?.id ? editForm.get('unSub')!.value : unSubOption"
+              *ngFor="let unSubOption of unSubsSharedCollection; trackBy: trackUnSubById"
+            >
+              {{ unSubOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

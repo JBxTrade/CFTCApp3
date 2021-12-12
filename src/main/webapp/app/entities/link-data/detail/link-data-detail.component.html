@@ -1,0 +1,128 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="linkData">
+      <h2 data-cy="linkDataDetailsHeading"><span jhiTranslate="cftcApp3App.linkData.detail.title">Link Data</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ linkData.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.theRole">The Role</span></dt>
+        <dd>
+          <span jhiTranslate="{{ 'cftcApp3App.TheRole.' + linkData.theRole }}">{{ linkData.theRole }}</span>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.imageCard">Image Card</span></dt>
+        <dd>
+          <div *ngIf="linkData.imageCard">
+            <a (click)="openFile(linkData.imageCard, linkData.imageCardContentType)">
+              <img
+                [src]="'data:' + linkData.imageCardContentType + ';base64,' + linkData.imageCard"
+                style="max-width: 100%"
+                alt="linkData image"
+              />
+            </a>
+            {{ linkData.imageCardContentType }}, {{ byteSize(linkData.imageCard) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.image">Image</span></dt>
+        <dd>
+          <div *ngIf="linkData.image">
+            <a (click)="openFile(linkData.image, linkData.imageContentType)">
+              <img [src]="'data:' + linkData.imageContentType + ';base64,' + linkData.image" style="max-width: 100%" alt="linkData image" />
+            </a>
+            {{ linkData.imageContentType }}, {{ byteSize(linkData.image) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.image2">Image 2</span></dt>
+        <dd>
+          <div *ngIf="linkData.image2">
+            <a (click)="openFile(linkData.image2, linkData.image2ContentType)">
+              <img
+                [src]="'data:' + linkData.image2ContentType + ';base64,' + linkData.image2"
+                style="max-width: 100%"
+                alt="linkData image"
+              />
+            </a>
+            {{ linkData.image2ContentType }}, {{ byteSize(linkData.image2) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.image3">Image 3</span></dt>
+        <dd>
+          <div *ngIf="linkData.image3">
+            <a (click)="openFile(linkData.image3, linkData.image3ContentType)">
+              <img
+                [src]="'data:' + linkData.image3ContentType + ';base64,' + linkData.image3"
+                style="max-width: 100%"
+                alt="linkData image"
+              />
+            </a>
+            {{ linkData.image3ContentType }}, {{ byteSize(linkData.image3) }}
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.titleFr">Title Fr</span></dt>
+        <dd>
+          <div *ngIf="linkData.titleFr">
+            <a [routerLink]="['/i-18-n', linkData.titleFr?.id, 'view']">{{ linkData.titleFr?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.titleEn">Title En</span></dt>
+        <dd>
+          <div *ngIf="linkData.titleEn">
+            <a [routerLink]="['/i-18-n', linkData.titleEn?.id, 'view']">{{ linkData.titleEn?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.descriptionFr">Description Fr</span></dt>
+        <dd>
+          <div *ngIf="linkData.descriptionFr">
+            <a [routerLink]="['/i-18-n', linkData.descriptionFr?.id, 'view']">{{ linkData.descriptionFr?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.descriptionEn">Description En</span></dt>
+        <dd>
+          <div *ngIf="linkData.descriptionEn">
+            <a [routerLink]="['/i-18-n', linkData.descriptionEn?.id, 'view']">{{ linkData.descriptionEn?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.codeFr">Code Fr</span></dt>
+        <dd>
+          <div *ngIf="linkData.codeFr">
+            <a [routerLink]="['/i-18-n', linkData.codeFr?.id, 'view']">{{ linkData.codeFr?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.codeEn">Code En</span></dt>
+        <dd>
+          <div *ngIf="linkData.codeEn">
+            <a [routerLink]="['/i-18-n', linkData.codeEn?.id, 'view']">{{ linkData.codeEn?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.sub">Sub</span></dt>
+        <dd>
+          <div *ngIf="linkData.sub">
+            <a [routerLink]="['/sub', linkData.sub?.id, 'view']">{{ linkData.sub?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="cftcApp3App.linkData.unSub">Un Sub</span></dt>
+        <dd>
+          <div *ngIf="linkData.unSub">
+            <a [routerLink]="['/un-sub', linkData.unSub?.id, 'view']">{{ linkData.unSub?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/link-data', linkData.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

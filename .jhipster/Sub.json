@@ -1,0 +1,75 @@
+{
+  "name": "Sub",
+  "fields": [
+    {
+      "fieldName": "theRole",
+      "fieldType": "TheRole",
+      "fieldValues": "ADMIN,ANONYMOUS,STUDENT,TEACHER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "subTitleFr",
+      "relationshipName": "titleFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "subTitleEn",
+      "relationshipName": "titleEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "subDescriptionFr",
+      "relationshipName": "descriptionFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "subDescriptionEn",
+      "relationshipName": "descriptionEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "link",
+      "otherEntityRelationshipName": "sub",
+      "relationshipName": "link"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "sub",
+      "relationshipName": "linkData"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "unSub",
+      "otherEntityRelationshipName": "sub",
+      "relationshipName": "unSub"
+    }
+  ],
+  "entityTableName": "sub",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210522020738"
+}

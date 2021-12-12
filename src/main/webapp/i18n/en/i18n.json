@@ -1,0 +1,47 @@
+{
+  "cftcApp3App": {
+    "i18n": {
+      "home": {
+        "title": "I 18 Ns",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new I 18 N",
+        "createOrEditLabel": "Create or edit a I 18 N",
+        "notFound": "No I 18 Ns found"
+      },
+      "created": "A new I 18 N is created with identifier {{ param }}",
+      "updated": "A I 18 N is updated with identifier {{ param }}",
+      "deleted": "A I 18 N is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete I 18 N {{ id }}?"
+      },
+      "detail": {
+        "title": "I 18 N"
+      },
+      "id": "ID",
+      "fr": "Fr",
+      "en": "En",
+      "mainTitleFr": "Main Title Fr",
+      "mainTitleEn": "Main Title En",
+      "mainDescriptionFr": "Main Description Fr",
+      "mainDescriptionEn": "Main Description En",
+      "subTitleFr": "Sub Title Fr",
+      "subTitleEn": "Sub Title En",
+      "subDescriptionFr": "Sub Description Fr",
+      "subDescriptionEn": "Sub Description En",
+      "unSubTitleFr": "Un Sub Title Fr",
+      "unSubTitleEn": "Un Sub Title En",
+      "unSubDescriptionFr": "Un Sub Description Fr",
+      "unSubDescriptionEn": "Un Sub Description En",
+      "linkTitleFr": "Link Title Fr",
+      "linkTitleEn": "Link Title En",
+      "linkDescriptionFr": "Link Description Fr",
+      "linkDescriptionEn": "Link Description En",
+      "linkdataTitleFr": "Linkdata Title Fr",
+      "linkdataTitleEn": "Linkdata Title En",
+      "linkdataDescriptionFr": "Linkdata Description Fr",
+      "linkdataDescriptionEn": "Linkdata Description En",
+      "codeFr": "Code Fr",
+      "codeEn": "Code En"
+    }
+  }
+}

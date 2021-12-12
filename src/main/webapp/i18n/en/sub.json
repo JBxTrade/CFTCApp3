@@ -1,0 +1,32 @@
+{
+  "cftcApp3App": {
+    "sub": {
+      "home": {
+        "title": "Subs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sub",
+        "createOrEditLabel": "Create or edit a Sub",
+        "notFound": "No Subs found"
+      },
+      "created": "A new Sub is created with identifier {{ param }}",
+      "updated": "A Sub is updated with identifier {{ param }}",
+      "deleted": "A Sub is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sub {{ id }}?"
+      },
+      "detail": {
+        "title": "Sub"
+      },
+      "id": "ID",
+      "theRole": "The Role",
+      "image": "Image",
+      "titleFr": "Title Fr",
+      "titleEn": "Title En",
+      "descriptionFr": "Description Fr",
+      "descriptionEn": "Description En",
+      "link": "Link",
+      "linkData": "Link Data",
+      "unSub": "Un Sub"
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "name": "UnSub",
+  "fields": [
+    {
+      "fieldName": "theRole",
+      "fieldType": "TheRole",
+      "fieldValues": "ADMIN,ANONYMOUS,STUDENT,TEACHER",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "unSubTitleFr",
+      "relationshipName": "titleFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "unSubTitleEn",
+      "relationshipName": "titleEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "unSubDescriptionFr",
+      "relationshipName": "descriptionFr",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "i18n",
+      "otherEntityRelationshipName": "unSubDescriptionEn",
+      "relationshipName": "descriptionEn",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "sub",
+      "otherEntityRelationshipName": "unSub",
+      "relationshipName": "sub"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "link",
+      "otherEntityRelationshipName": "unSub",
+      "relationshipName": "link"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "unSub",
+      "relationshipName": "linkData"
+    }
+  ],
+  "entityTableName": "un_sub",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210522020739"
+}

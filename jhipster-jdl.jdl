@@ -1,0 +1,81 @@
+
+entity Main {
+	theRole TheRole required
+    image ImageBlob required
+}
+
+entity Sub {
+	theRole TheRole required
+    image ImageBlob required
+}
+
+entity UnSub {
+	theRole TheRole required
+    image ImageBlob required
+}
+
+entity Link {
+	theRole TheRole required
+    image ImageBlob required
+    theLink String required
+}
+
+entity LinkData {
+	theRole TheRole required
+    imageCard ImageBlob required
+    image ImageBlob
+    image2 ImageBlob
+    image3 ImageBlob
+}
+
+entity I18n {
+	fr String
+    en String
+}
+
+enum TheRole {
+	ADMIN,
+	ANONYMOUS, 
+    STUDENT, 
+    TEACHER
+}
+
+relationship OneToMany {
+	Sub to Link{sub},
+    Sub to LinkData{sub},
+    
+    UnSub to Sub,
+    UnSub to Link,
+    UnSub to LinkData,
+}
+
+relationship OneToOne {
+    
+    Main{subLink} to Sub,
+    Main{link} to Link,
+    Main{linkData} to LinkData,
+
+	Main{titleFr} to I18n{mainTitleFr(fr)},
+    Main{titleEn} to I18n{mainTitleEn(en)},
+    Main{descriptionFr} to I18n{mainDescriptionFr(fr)},
+    Main{descriptionEn} to I18n{mainDescriptionEn(en)},
+    Sub{titleFr} to I18n{subTitleFr(fr)},
+    Sub{titleEn} to I18n{subTitleEn(en)},
+    Sub{descriptionFr} to I18n{subDescriptionFr(fr)},
+    Sub{descriptionEn} to I18n{subDescriptionEn(en)},
+    UnSub{titleFr} to I18n{unSubTitleFr(fr)},
+    UnSub{titleEn} to I18n{unSubTitleEn(en)},
+    UnSub{descriptionFr} to I18n{unSubDescriptionFr(fr)},
+    UnSub{descriptionEn} to I18n{unSubDescriptionEn(en)},
+    Link{titleFr} to I18n{linkTitleFr(fr)},
+    Link{titleEn} to I18n{linkTitleEn(en)},
+    Link{descriptionFr} to I18n{linkDescriptionFr(fr)},
+    Link{descriptionEn} to I18n{linkDescriptionEn(en)},
+    LinkData{titleFr} to I18n{linkdataTitleFr(fr)},
+    LinkData{titleEn} to I18n{linkdataTitleEn(en)},
+    LinkData{descriptionFr} to I18n{linkdataDescriptionFr(fr)},
+    LinkData{descriptionEn} to I18n{linkdataDescriptionEn(en)},
+    LinkData{codeFr} to I18n{codeFr(fr)},
+    LinkData{codeEn} to I18n{codeEn(en)}
+}
+

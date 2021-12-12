@@ -1,0 +1,32 @@
+{
+  "cftcApp3App": {
+    "link": {
+      "home": {
+        "title": "Links",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Link",
+        "createOrEditLabel": "Créer ou éditer un Link",
+        "notFound": "Aucun Link trouvé"
+      },
+      "created": "Un nouveau Link a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Link avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Link avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Link {{ id }} ?"
+      },
+      "detail": {
+        "title": "Link"
+      },
+      "id": "ID",
+      "theRole": "The Role",
+      "image": "Image",
+      "theLink": "The Link",
+      "titleFr": "Title Fr",
+      "titleEn": "Title En",
+      "descriptionFr": "Description Fr",
+      "descriptionEn": "Description En",
+      "sub": "Sub",
+      "unSub": "Un Sub"
+    }
+  }
+}

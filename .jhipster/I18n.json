@@ -1,0 +1,201 @@
+{
+  "name": "I18n",
+  "fields": [
+    {
+      "fieldName": "fr",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "en",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "main",
+      "otherEntityRelationshipName": "titleFr",
+      "relationshipName": "mainTitleFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "main",
+      "otherEntityRelationshipName": "titleEn",
+      "relationshipName": "mainTitleEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "main",
+      "otherEntityRelationshipName": "descriptionFr",
+      "relationshipName": "mainDescriptionFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "main",
+      "otherEntityRelationshipName": "descriptionEn",
+      "relationshipName": "mainDescriptionEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sub",
+      "otherEntityRelationshipName": "titleFr",
+      "relationshipName": "subTitleFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sub",
+      "otherEntityRelationshipName": "titleEn",
+      "relationshipName": "subTitleEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sub",
+      "otherEntityRelationshipName": "descriptionFr",
+      "relationshipName": "subDescriptionFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "sub",
+      "otherEntityRelationshipName": "descriptionEn",
+      "relationshipName": "subDescriptionEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "unSub",
+      "otherEntityRelationshipName": "titleFr",
+      "relationshipName": "unSubTitleFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "unSub",
+      "otherEntityRelationshipName": "titleEn",
+      "relationshipName": "unSubTitleEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "unSub",
+      "otherEntityRelationshipName": "descriptionFr",
+      "relationshipName": "unSubDescriptionFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "unSub",
+      "otherEntityRelationshipName": "descriptionEn",
+      "relationshipName": "unSubDescriptionEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "link",
+      "otherEntityRelationshipName": "titleFr",
+      "relationshipName": "linkTitleFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "link",
+      "otherEntityRelationshipName": "titleEn",
+      "relationshipName": "linkTitleEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "link",
+      "otherEntityRelationshipName": "descriptionFr",
+      "relationshipName": "linkDescriptionFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "link",
+      "otherEntityRelationshipName": "descriptionEn",
+      "relationshipName": "linkDescriptionEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "titleFr",
+      "relationshipName": "linkdataTitleFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "titleEn",
+      "relationshipName": "linkdataTitleEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "descriptionFr",
+      "relationshipName": "linkdataDescriptionFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "descriptionEn",
+      "relationshipName": "linkdataDescriptionEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "codeFr",
+      "relationshipName": "codeFr",
+      "otherEntityField": "fr",
+      "ownerSide": false
+    },
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "linkData",
+      "otherEntityRelationshipName": "codeEn",
+      "relationshipName": "codeEn",
+      "otherEntityField": "en",
+      "ownerSide": false
+    }
+  ],
+  "entityTableName": "i_18_n",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210522020742"
+}

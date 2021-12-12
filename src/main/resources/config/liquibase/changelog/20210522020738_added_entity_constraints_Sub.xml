@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Sub.
+    -->
+    <changeSet id="20210522020738-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="title_fr_id"
+                                 baseTableName="sub"
+                                 constraintName="fk_sub__title_fr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+
+        <addForeignKeyConstraint baseColumnNames="title_en_id"
+                                 baseTableName="sub"
+                                 constraintName="fk_sub__title_en_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+
+        <addForeignKeyConstraint baseColumnNames="description_fr_id"
+                                 baseTableName="sub"
+                                 constraintName="fk_sub__description_fr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+
+        <addForeignKeyConstraint baseColumnNames="description_en_id"
+                                 baseTableName="sub"
+                                 constraintName="fk_sub__description_en_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="i_18_n"/>
+
+        <addForeignKeyConstraint baseColumnNames="un_sub_id"
+                                 baseTableName="sub"
+                                 constraintName="fk_sub__un_sub_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="un_sub"/>
+    </changeSet>
+</databaseChangeLog>

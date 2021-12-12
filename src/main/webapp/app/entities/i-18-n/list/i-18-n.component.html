@@ -1,0 +1,70 @@
+<div>
+  <h2 id="page-heading" data-cy="I18nHeading">
+    <span jhiTranslate="cftcApp3App.i18n.home.title">I 18 Ns</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cftcApp3App.i18n.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-i-18-n"
+        [routerLink]="['/i-18-n/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cftcApp3App.i18n.home.createLabel"> Create a new I 18 N </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="i18ns?.length === 0">
+    <span jhiTranslate="cftcApp3App.i18n.home.notFound">No i18ns found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="i18ns && i18ns.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.i18n.fr">Fr</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.i18n.en">En</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let i18n of i18ns; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/i-18-n', i18n.id, 'view']">{{ i18n.id }}</a>
+          </td>
+          <td>{{ i18n.fr }}</td>
+          <td>{{ i18n.en }}</td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/i-18-n', i18n.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/i-18-n', i18n.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(i18n)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

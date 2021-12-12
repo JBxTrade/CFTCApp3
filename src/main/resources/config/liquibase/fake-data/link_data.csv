@@ -1,0 +1,11 @@
+id;the_role;image_card;image_card_content_type;image;image_content_type;image_2;image_2_content_type;image_3;image_3_content_type
+1;ANONYMOUS;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+2;ANONYMOUS;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+3;TEACHER;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+4;STUDENT;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+5;ADMIN;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+6;ADMIN;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+7;STUDENT;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+8;ADMIN;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+9;ANONYMOUS;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png
+10;ANONYMOUS;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png;../fake-data/blob/hipster.png;image/png

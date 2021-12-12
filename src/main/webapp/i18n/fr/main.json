@@ -1,0 +1,32 @@
+{
+  "cftcApp3App": {
+    "main": {
+      "home": {
+        "title": "Mains",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Main",
+        "createOrEditLabel": "Créer ou éditer un Main",
+        "notFound": "Aucun Main trouvé"
+      },
+      "created": "Un nouveau Main a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Main avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Main avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Main {{ id }} ?"
+      },
+      "detail": {
+        "title": "Main"
+      },
+      "id": "ID",
+      "theRole": "The Role",
+      "image": "Image",
+      "subLink": "Sub Link",
+      "link": "Link",
+      "linkData": "Link Data",
+      "titleFr": "Title Fr",
+      "titleEn": "Title En",
+      "descriptionFr": "Description Fr",
+      "descriptionEn": "Description En"
+    }
+  }
+}

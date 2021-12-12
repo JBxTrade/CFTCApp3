@@ -15,7 +15,18 @@
     <property name="datetimeType" value="datetime" dbms="oracle, mssql, postgresql, h2"/>
 
     <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020737_added_entity_Main.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020738_added_entity_Sub.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020739_added_entity_UnSub.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020740_added_entity_Link.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020741_added_entity_LinkData.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020742_added_entity_I18n.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20210522020737_added_entity_constraints_Main.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020738_added_entity_constraints_Sub.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020739_added_entity_constraints_UnSub.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020740_added_entity_constraints_Link.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210522020741_added_entity_constraints_LinkData.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

@@ -1,0 +1,117 @@
+<div>
+  <h2 id="page-heading" data-cy="MainHeading">
+    <span jhiTranslate="cftcApp3App.main.home.title">Mains</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="cftcApp3App.main.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-main"
+        [routerLink]="['/main/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="cftcApp3App.main.home.createLabel"> Create a new Main </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="mains?.length === 0">
+    <span jhiTranslate="cftcApp3App.main.home.notFound">No mains found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="mains && mains.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.theRole">The Role</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.image">Image</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.subLink">Sub Link</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.link">Link</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.linkData">Link Data</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.titleFr">Title Fr</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.titleEn">Title En</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.descriptionFr">Description Fr</span></th>
+          <th scope="col"><span jhiTranslate="cftcApp3App.main.descriptionEn">Description En</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let main of mains; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/main', main.id, 'view']">{{ main.id }}</a>
+          </td>
+          <td jhiTranslate="{{ 'cftcApp3App.TheRole.' + main.theRole }}">{{ main.theRole }}</td>
+          <td>
+            <a *ngIf="main.image" (click)="openFile(main.image, main.imageContentType)">
+              <img [src]="'data:' + main.imageContentType + ';base64,' + main.image" style="max-height: 30px" alt="main image" />
+            </a>
+            <span *ngIf="main.image">{{ main.imageContentType }}, {{ byteSize(main.image) }}</span>
+          </td>
+          <td>
+            <div *ngIf="main.subLink">
+              <a [routerLink]="['/sub', main.subLink?.id, 'view']">{{ main.subLink?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="main.link">
+              <a [routerLink]="['/link', main.link?.id, 'view']">{{ main.link?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="main.linkData">
+              <a [routerLink]="['/link-data', main.linkData?.id, 'view']">{{ main.linkData?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="main.titleFr">
+              <a [routerLink]="['/i-18-n', main.titleFr?.id, 'view']">{{ main.titleFr?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="main.titleEn">
+              <a [routerLink]="['/i-18-n', main.titleEn?.id, 'view']">{{ main.titleEn?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="main.descriptionFr">
+              <a [routerLink]="['/i-18-n', main.descriptionFr?.id, 'view']">{{ main.descriptionFr?.id }}</a>
+            </div>
+          </td>
+          <td>
+            <div *ngIf="main.descriptionEn">
+              <a [routerLink]="['/i-18-n', main.descriptionEn?.id, 'view']">{{ main.descriptionEn?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button type="submit" [routerLink]="['/main', main.id, 'view']" class="btn btn-info btn-sm" data-cy="entityDetailsButton">
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button type="submit" [routerLink]="['/main', main.id, 'edit']" class="btn btn-primary btn-sm" data-cy="entityEditButton">
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(main)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
